@@ -16,8 +16,9 @@ public func configure(_ app: Application) throws {
     ), as: .psql)
     
     // migrate
-    app.migrations.add(CreateAcronym())
     app.migrations.add(CreateUser())
+    app.migrations.add(CreateAcronym())
+    app.migrations.add(CreateCatetory())
     app.logger.logLevel = .debug
     try app.autoMigrate().wait()
 
