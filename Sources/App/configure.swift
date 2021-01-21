@@ -19,6 +19,7 @@ public func configure(_ app: Application) throws {
     app.migrations.add(CreateUser())
     app.migrations.add(CreateAcronym())
     app.migrations.add(CreateCatetory())
+    app.migrations.add(CreateAcronymCategoryPivot())
     app.logger.logLevel = .debug
     try app.autoMigrate().wait()
 

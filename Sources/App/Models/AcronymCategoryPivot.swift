@@ -8,7 +8,7 @@
 import Foundation
 import Fluent
 
-final clas AcronymCategoryPivot: Model {
+final class AcronymCategoryPivot: Model {
     static let schema = "acronym-category-pivot"
     
     @ID

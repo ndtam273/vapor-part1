@@ -26,6 +26,14 @@ final class Acronym: Model {
     @Parent(key: "userID")
     var user: User
     
+    @Siblings(
+        through: AcronymCategoryPivot.self,
+        from: \.$acronym,
+        to: \.$category
+    )
+    
+    var categories: [Category]
+    
     init() {}
     
     // create model
@@ -40,3 +48,6 @@ final class Acronym: Model {
 
 extension Acronym: Content {}
 
+//6D303EAF-42CF-4BFF-A18F-8580A5BD876F
+//
+//27EC6AC9-3B51-4282-875E-A8012F8FF8D5
